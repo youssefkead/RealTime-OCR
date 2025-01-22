@@ -10,10 +10,10 @@ import cv2
 import numpy
 import pytesseract
 
-import Linguist
+#import Linguist
 
 
-def tesseract_location(root):
+def tesseract_location(root='C:/Program Files/Tesseract-OCR/Tesseract.exe'):
     """
     Sets the tesseract cmd root and exits is the root is not set correctly
 
@@ -428,7 +428,7 @@ def ocr_stream(crop: list[int, int], source: int = 0, view_mode: int = 1, langua
     ocr.set_dimensions(img_wi, img_hi, cropx, cropy)  # Tells the OCR class where to perform OCR (if img is cropped)
 
     cps1 = RateCounter().start()
-    lang_name = Linguist.language_string(language)  # Creates readable language names from tesseract langauge code
+    lang_name = "" # Linguist.language_string(language)  # Creates readable language names from tesseract langauge code
 
     # Main display loop
     print("\nPUSH c TO CAPTURE AN IMAGE. PUSH q TO VIEW VIDEO STREAM\n")
